@@ -1,0 +1,9 @@
+node_modules/
+dist/
+target/
+.mvn/
+mvnw
+mvnw.cmd
+*.log
+.env
+.DS_Store
