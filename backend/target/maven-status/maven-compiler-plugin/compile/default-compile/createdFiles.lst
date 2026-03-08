@@ -1,0 +1,12 @@
+com/atc/simulator/service/AiInsightsService.class
+com/atc/simulator/service/ConflictDetectionService.class
+com/atc/simulator/websocket/WebSocketConfig.class
+com/atc/simulator/model/Flight.class
+com/atc/simulator/service/ConflictDetectionService$ConflictAlert.class
+com/atc/simulator/controller/InsightsController.class
+com/atc/simulator/DemoApplication.class
+com/atc/simulator/service/AircraftSimulationService.class
+com/atc/simulator/model/AiInsightResponse.class
+com/atc/simulator/service/FlightService.class
+com/atc/simulator/repository/FlightRepository.class
+com/atc/simulator/controller/FlightController.class
