@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/flights")
-@CrossOrigin(origins = "http://localhost:5173") // Standard Vite React port
 public class FlightController {
 
     private final FlightService flightService;
@@ -23,19 +22,19 @@ public class FlightController {
     }
 
     @PostMapping("/seed")
-    public ResponseEntity<List<Flight>> seedFlights(@RequestParam double lat, @RequestParam double lon, @RequestParam(defaultValue = "10") int count) {
+    public ResponseEntity<List<Flight>> seedFlights(@RequestParam double lat, @RequestParam double lon,
+            @RequestParam(defaultValue = "10") int count) {
         java.util.List<Flight> seeded = new java.util.ArrayList<>();
         java.util.Random random = new java.util.Random();
         for (int i = 0; i < count; i++) {
             Flight f = new Flight(
-                "TEST" + (1000 + random.nextInt(9000)),
-                lat + (random.nextDouble() - 0.5) * 5.0, // spread across ~500km
-                lon + (random.nextDouble() - 0.5) * 5.0,
-                30000 + (random.nextDouble() - 0.5) * 10000,
-                400 + random.nextDouble() * 200,
-                random.nextDouble() * 360,
-                System.currentTimeMillis()
-            );
+                    "TEST" + (1000 + random.nextInt(9000)),
+                    lat + (random.nextDouble() - 0.5) * 5.0, // spread across ~500km
+                    lon + (random.nextDouble() - 0.5) * 5.0,
+                    30000 + (random.nextDouble() - 0.5) * 10000,
+                    400 + random.nextDouble() * 200,
+                    random.nextDouble() * 360,
+                    System.currentTimeMillis());
             seeded.add(flightService.createFlight(f));
         }
         return new ResponseEntity<>(seeded, HttpStatus.CREATED);
