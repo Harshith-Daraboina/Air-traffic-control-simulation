@@ -2,7 +2,7 @@
 
 A comprehensive, full-stack, real-time Air Traffic Control (ATC) simulation dashboard. This project demonstrates backend engineering, real-time systems, system design, and modern frontend development.
 
-![ATC Simulation Dashboard](./image.png)
+![ATC Simulation Dashboard](./dashboard.png)
 
 ## ✨ Features
 
