@@ -12,7 +12,8 @@ function App() {
 
   useEffect(() => {
     // Initial fetch of flights from REST API
-    fetch('http://localhost:8081/api/flights')
+    // Initial fetch of flights from REST API
+    fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081'}/api/flights`)
       .then(res => res.json())
       .then(data => {
         setFlights(data);
@@ -62,7 +63,7 @@ function App() {
               onClick={() => {
                 if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition(position => {
-                    fetch(`http://localhost:8081/api/flights/seed?lat=${position.coords.latitude}&lon=${position.coords.longitude}&count=15`, { method: 'POST' });
+                    fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081'}/api/flights/seed?lat=${position.coords.latitude}&lon=${position.coords.longitude}&count=15`, { method: 'POST' });
                   });
                 }
               }}
