@@ -56,9 +56,17 @@ sudo systemctl start mongod
 ```
 
 ### 3. Start the Backend
-Navigate to the `backend` directory, install dependencies, and run the Spring Boot application.
+Navigate to the `backend` directory, create a `.env` file, and set up your API credentials:
 ```bash
 cd backend
+echo "MONGO_URI=mongodb://localhost:27017/atc_simulator" > .env
+echo "PORT=8081" >> .env
+echo "AVIATIONSTACK_KEY=your_key_here" >> .env
+echo "WEATHERAPI_KEY=your_key_here" >> .env
+echo "GEMINI_KEY=your_key_here" >> .env
+```
+Install dependencies and run the Spring Boot application:
+```bash
 ./mvnw clean package -DskipTests
 ./mvnw spring-boot:run
 ```
